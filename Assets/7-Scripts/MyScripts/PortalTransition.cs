@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class PortalTransition : MonoBehaviour
 {
-    public string sceneToLoad; // The name of the scene to load
+    public string sceneToLoad;                          // The name of the scene to load
+    public AudioSource TransitionAudioSource;           // The audio source to play the transition sound
 
     private void OnTriggerEnter(Collider other)
     {
@@ -19,6 +20,9 @@ public class PortalTransition : MonoBehaviour
     {
         // Display black screen effect
         //BlackScreenController.instance.FadeIn();
+
+        // Play the transition sound
+        TransitionAudioSource.Play();
 
         // Wait for the fade-in to complete
         yield return new WaitForSeconds(1f);

@@ -9,8 +9,14 @@ EditorBuildSettings:
     path: Assets/6-Scenes/1 Start Scene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
-    path: Assets/6-Scenes/SampleTest-Scenes/WorkingScene.unity
-    guid: fed0dbe280b4e224ab0ca11e7fcecdea
+    path: Assets/6-Scenes/3 CentralHub Scene.unity
+    guid: 74431da6344e68e4e8e2deca78173d5b
+  - enabled: 1
+    path: Assets/6-Scenes/4 ShipExperience Scene.unity
+    guid: e686e16f4b5e2db409baf6d8285afc20
+  - enabled: 1
+    path: Assets/6-Scenes/5 Museum Scene.unity
+    guid: 3fa6fba2471fdd140888a6ef7851a993
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: eae8a0a04e60368479d3fe240ebea762, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 0d9dd4a37a4aea54d877042876ef43cb, type: 2}
