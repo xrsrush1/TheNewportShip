@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/6-Scenes/1 Start Scene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
+    path: Assets/6-Scenes/2 OnBoarding Scene.unity
+    guid: 8336291c802fec84f919fda7de93e30c
+  - enabled: 1
     path: Assets/6-Scenes/3 CentralHub Scene.unity
     guid: 74431da6344e68e4e8e2deca78173d5b
   - enabled: 1
