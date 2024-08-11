@@ -20,18 +20,20 @@ public class SliceObject : MonoBehaviour
     public LayerMask sliceableLayer; //created a layer, which will be given to all obj which can be sliced
 
     private AudioSource CutAudio;
+    private int sliceCount = 0;
+
+    public GameObject woodCutEndUI;
 
     // Start is called before the first frame update
     void Start()
     {
         CutAudio = GetComponent<AudioSource>();//to get the audio source on this component
-    }
+    }       
 
     // Update is called once per frame
     void FixedUpdate()
     {
         //check the collision between the sword and the target object for VR Slice
-
         bool hasHit = Physics.Linecast(startSlicePoint.position, endSlicePoint.position, out RaycastHit hit, sliceableLayer); //checking the collision
 
         if (hasHit)
@@ -40,6 +42,13 @@ public class SliceObject : MonoBehaviour
             //here, we will take the obj which was hit 
 
             Slice(target); //now we call the slice function to cut the taregt obj we just hit with thw sword
+        }
+        if(sliceCount == 5)
+        {
+            //if the player has sliced 5 objects, then congratulate the player
+            
+            Debug.Log("congrats! sliced 5 times");
+            woodCutEndUI.SetActive(true);
         }
     }
 
@@ -73,6 +82,8 @@ public class SliceObject : MonoBehaviour
             //we will destroy the target after creation of both half meshes
             //as even after their generation, the original target obj is visible and it defeats the purpose.
             CutAudio.Play(); //to play the audio on collision
+
+            sliceCount++;   //increment the slice count
         }
 
     }
