@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Dialogue Canvas
   - Tools
+  - WineLiquidLayer
   layers:
   - Default
   - TransparentFX

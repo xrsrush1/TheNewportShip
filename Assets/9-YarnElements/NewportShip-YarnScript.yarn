@@ -1,7 +1,67 @@
 ﻿title: William
 tags:
 ---
-
+<<declare $WilliamFinished = false>> //variable to check if william finished talking
 //write ur dialogues here
-Hello There! My name is William. #line:097115a 
+Hello There! My name is William. #line:William_01
+The Ship you are on now, was built in 1457 along the coast of the Basque country in the northern spain region.  #line:William_02 
+We are in the middle of a trade of liquor between the Iberian Peninsula and Britain. #line:William_03 
+If you want to know more such facts and experience things, explore the ship, talk to other shipmen and have a good time. #line:William_04 
+
+<<set $WilliamFinished = true>>
+===
+
+title: Thomas
+tags:
+---
+//thomas talks about sailing
+<<declare $ThomasFinished = false>>
+Hi, I am Thomas. I am incharge of sailing this ship. #line:Thomas_01
+At the moment, i am trying to look if there are any ships coming towards us who could harm us.  #line:Thomas_02 
+Can i Tell you something interesting?  #line:Thomas_03 
+-> Yes Ofcourse! #line:0238921 
+    During the building of this ship, we used hemp and grass rope, heart blocks and lifting hooks for rigging.  #line:Thomas_04 
+    These parts guide us across the Bay of Biscay to fight the fierce storm.  #line:Thomas_05 
+    I have to get back to my work, please free to explore the ship. #line:Thomas_06 
+
+-> Umm Sure #line:0725002 
+    During the building of this ship, we used hemp and grass rope, heart blocks lifting hooks for rigging.    #line:Thomas_07 
+    These parts guide us across the Bay of Biscay to fight the fierse storm.   #line:Thomas_08 
+    I have to get back to my work, please free to explore the ship.  #line:Thomas_09 
+
+<<set $ThomasFinished = true>>
+
+===
+
+title: Robert
+tags:
+---
+//robert talks about currency
+
+<<declare $RobertFinished = false>>
+Hi, I am Robert. I look after our currency here on the ship. #line:Robert_01 
+You know, our currency in the 15th century is very different from your generation. #line:Robert_02 
+Do you want to guess which currency we have with us? #line:Robert_03 
+
+-> French and Portuguese currency  #line:09748a8 //correct option
+    Thats Right! You can see the coins behind you on the chest. #line:Robert_04 
+    You can pick them up and see for yourself. #line:Robert_05 
+    <<set $RobertFinished = true>>
+
+-> British and Spanish currency #line:078021c 
+    <<jump WrongAnswer>>
+
+===
+title: WrongAnswer
+tags:
+---
+
+Do you want to try again? Guess the currency we have. #line:Robert_06 
+-> French and Portuguese currency  #line:0994a3e //correct option
+    Thats Right! You can see the coins behind you at the chest. #line:Robert_07 
+    You can pick them up and see for yourself. #line:Robert_08 
+    <<set $RobertFinished = true>>
+    
+-> British and Spanish currency #line:0f2428d 
+    <<jump WrongAnswer>>
 ===
