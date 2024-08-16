@@ -24,8 +24,6 @@ public class IntroTriggers : MonoBehaviour
         //this will play the audio when the player enters the trigger zone
         //as audio is unique to each trigger zone, we dont have to use the switch case to check tags to play the audio
 
-        Debug.Log("Entered OnTriggerEnter");
-
         if (other.gameObject.CompareTag("Player"))  
         {
             Debug.Log($"Entered trigger zone: {gameObject.tag}");
@@ -39,8 +37,9 @@ public class IntroTriggers : MonoBehaviour
         // Wait until the audio is finished playing
         yield return new WaitWhile(() => IntroAudioThisObj.isPlaying);
 
-        // Disable the IsTrigger property of the collider
-        cubeCollider.isTrigger = false;
-        Debug.Log("IsTrigger has been disabled after audio finished playing.");
+        // Remove the collider entirely
+        Destroy(cubeCollider);
+        Debug.Log("Collider has been removed after audio finished playing.");
     }
+
 }

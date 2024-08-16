@@ -11,6 +11,7 @@ If you want to know more such facts and experience things, explore the ship, tal
 <<set $WilliamFinished = true>>
 ===
 
+
 title: Thomas
 tags:
 ---
@@ -20,18 +21,31 @@ Hi, I am Thomas. I am incharge of sailing this ship. #line:Thomas_01
 At the moment, i am trying to look if there are any ships coming towards us who could harm us.  #line:Thomas_02 
 Can i Tell you something interesting?  #line:Thomas_03 
 -> Yes Ofcourse! #line:0238921 
-    During the building of this ship, we used hemp and grass rope, heart blocks and lifting hooks for rigging.  #line:Thomas_04 
-    These parts guide us across the Bay of Biscay to fight the fierce storm.  #line:Thomas_05 
-    I have to get back to my work, please free to explore the ship. #line:Thomas_06 
+    <<jump Ofcourse>>
 
 -> Umm Sure #line:0725002 
-    During the building of this ship, we used hemp and grass rope, heart blocks lifting hooks for rigging.    #line:Thomas_07 
-    These parts guide us across the Bay of Biscay to fight the fierse storm.   #line:Thomas_08 
-    I have to get back to my work, please free to explore the ship.  #line:Thomas_09 
+    <<jump Sure>>
+===
+title: Ofcourse
+tags:
+---
+During the building of this ship, we used hemp and grass rope, heart blocks and lifting hooks for rigging.  #line:Thomas_04 
+These parts guide us across the Bay of Biscay to fight the fierce storm.  #line:Thomas_05 
+I have to get back to my work, please free to explore the ship. #line:Thomas_06 
+<<set $ThomasFinished = true>>
+===
 
+title: Sure
+tags:
+---
+During the building of this ship, we used hemp and grass rope, heart blocks lifting hooks for rigging.    #line:Thomas_07 
+These parts guide us across the Bay of Biscay to fight the fierse storm.   #line:Thomas_08 
+I have to get back to my work, please free to explore the ship.  #line:Thomas_09 
 <<set $ThomasFinished = true>>
 
 ===
+
+
 
 title: Robert
 tags:
@@ -43,25 +57,67 @@ Hi, I am Robert. I look after our currency here on the ship. #line:Robert_01
 You know, our currency in the 15th century is very different from your generation. #line:Robert_02 
 Do you want to guess which currency we have with us? #line:Robert_03 
 
--> French and Portuguese currency  #line:09748a8 //correct option
-    Thats Right! You can see the coins behind you on the chest. #line:Robert_04 
-    You can pick them up and see for yourself. #line:Robert_05 
-    <<set $RobertFinished = true>>
+-> French and Portuguese currency  #line:09748a8
+    <<jump RightAnswer>>
 
 -> British and Spanish currency #line:078021c 
     <<jump WrongAnswer>>
 
 ===
+title: RightAnswer
+tags:
+---
+    Thats Right! You can see the coins behind you on the chest. #line:Robert_04 
+    You can pick them up and see for yourself. #line:Robert_05 
+    <<set $RobertFinished = true>>
+===
+
 title: WrongAnswer
 tags:
 ---
-
 Do you want to try again? Guess the currency we have. #line:Robert_06 
 -> French and Portuguese currency  #line:0994a3e //correct option
-    Thats Right! You can see the coins behind you at the chest. #line:Robert_07 
-    You can pick them up and see for yourself. #line:Robert_08 
-    <<set $RobertFinished = true>>
+    <<jump RightAnswer>>
     
 -> British and Spanish currency #line:0f2428d 
     <<jump WrongAnswer>>
+===
+
+
+
+title: Soldier
+tags:
+---
+//soldier talks about Defence
+
+<<declare $SoldierFinished = false>>
+
+Hello Gentleman. I am the Archer of this ship. I am on a lookout for any other attacking ships. #line:09de6b5 
+Do you know, in this age, kings encourage merchants to attack trade vessels like ours.  #line:0c06ae0 
+Why do you think they would do that? #line:0724530 
+-> To create jobs for naval architects. #line:0a39720 
+    <<jump SoldierWrong>>
+
+-> To capture ship, crew and cargo. #line:0d5bef2 
+    <<jump SoldierCorrect>>
+===
+title: SoldierCorrect
+tags:
+---
+Thats Right! Which is why i am here, to handle the Defence. #line:08f0377 
+We also carry martial equipment with us for our protection. #line:04e45ec 
+On the ship, we have Stone Shots at the top deck. You can go check them out. #line:09bfef8 
+Stone shots shatters when fired, inflicting maximum damage to human targets while the ship remains unharmed. #line:08822e9 
+Alright, you go ahead and explore a bit more. #line:0f28dd0 
+<<set $SoldierFinished = true>>
+===
+title: SoldierWrong
+tags:
+---
+No my dear. They try to attack our ships in order to capture our cargo, crew and even the ship. #line:063e387 
+Which is why, we carry martial equipment with us for protection. #line:077d978 
+On the ship, we have Stone Shots at the top deck. You can go check them out. #line:07b36a2 
+Stone shots shatters when fired, inflicting maximum damage to human targets while the ship remains unharmed. #line:0c96af0 
+Alright, you go ahead and explore a bit more. #line:03882bf 
+<<set $SoldierFinished = true>>
 ===
