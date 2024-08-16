@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ObjectPickupPhysics : MonoBehaviour
 {
+    // This script is used to disable physics and gravity when the object is picked up
     public void ObjectPickedUp()
     {
         gameObject.GetComponent<Rigidbody>().isKinematic = true; // Disable physics

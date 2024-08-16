@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MorrisEndGameChecker : MonoBehaviour
 {
+    // This script will be used to check if all the correct pieces have been placed and end the game
     public int correctPiecesPlaced = 0; // Number of correct pieces placed
     
     public GameObject EndGameUI; // Reference to the end game UI object

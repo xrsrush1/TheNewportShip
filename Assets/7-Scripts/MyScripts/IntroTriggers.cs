@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class IntroTriggers : MonoBehaviour
 {
+    //this script is attached to the trigger zone cube, and is used to play the audio when the player enters the trigger zone
     public AudioSource IntroAudioThisObj;
     private Collider cubeCollider; //will store the collider of the trigger zone cube
 
