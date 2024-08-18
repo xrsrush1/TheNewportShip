@@ -8,6 +8,8 @@ public class IntroTriggers : MonoBehaviour
     public AudioSource IntroAudioThisObj;
     private Collider cubeCollider; //will store the collider of the trigger zone cube
 
+    public List<AudioSource> audioToKeepPlaying;  // List of audio sources that should keep playing even after others have stopped
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +30,11 @@ public class IntroTriggers : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))  
         {
             Debug.Log($"Entered trigger zone: {gameObject.tag}");
+
+            // Stop all other audio except the ones in ignoreAudioSources and this trigger's audio
+            StopAllAudioExceptInList();
+
+            // Play the audio for this trigger zone
             IntroAudioThisObj.Play();
 
             StartCoroutine(DisableTriggerAfterAudio());  // Start coroutine to disable IsTrigger after audio finishes
@@ -41,6 +48,23 @@ public class IntroTriggers : MonoBehaviour
         // Remove the collider entirely
         Destroy(cubeCollider);
         Debug.Log("Collider has been removed after audio finished playing.");
+    }
+
+    //this function will make sure that only the audio of the trigger zone is playing and all other unnecessary audio is stopped
+    private void StopAllAudioExceptInList()
+    {
+        // Find all audio sources in the scene
+        AudioSource[] allAudioSources = FindObjectsOfType<AudioSource>();
+
+        // Loop through all audio sources
+        foreach (AudioSource audioSource in allAudioSources)
+        {
+            // Stop the audio source if it's not in the audioToKeepPlaying list and not the trigger's audio
+            if (!audioToKeepPlaying.Contains(audioSource) && audioSource != IntroAudioThisObj)
+            {
+                audioSource.Stop();
+            }
+        }
     }
 
 }
