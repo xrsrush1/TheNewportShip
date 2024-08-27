@@ -12,7 +12,7 @@ public class PinChangeAtTaskEnd : MonoBehaviour
         ChangePinColor();
     }
     
-    private void ChangePinColor()
+    public void ChangePinColor()
     {
         // Change the color of the map pin
         MapPinThisTask.GetComponent<Renderer>().material.color = Color.green;
