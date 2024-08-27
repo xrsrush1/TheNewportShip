@@ -18,20 +18,19 @@ tags:
 //thomas talks about sailing
 <<declare $ThomasFinished = false>>
 Hi, I am Thomas. I am incharge of sailing this ship. #line:Thomas_01
-At the moment, i am trying to look if there are any ships coming towards us who could harm us.  #line:Thomas_02 
-Can i Tell you something interesting?  #line:Thomas_03 
+At the moment, i am trying to look if there are any ships coming towards us who could harm us.  #line:Thomas_02
+Can i Tell you something interesting?  #line:Thomas_03
 -> Yes Ofcourse! #line:0238921 
     <<jump Ofcourse>>
-
 -> Umm Sure #line:0725002 
     <<jump Sure>>
 ===
 title: Ofcourse
 tags:
 ---
-During the building of this ship, we used hemp and grass rope, heart blocks and lifting hooks for rigging.  #line:Thomas_04 
-These parts guide us across the Bay of Biscay to fight the fierce storm.  #line:Thomas_05 
-I have to get back to my work, please free to explore the ship. #line:Thomas_06 
+During the building of this ship, we used hemp and grass rope, heart blocks and lifting hooks for rigging.  #line:Thomas_04
+These parts guide us across the Bay of Biscay to fight the fierce storm.  #line:Thomas_05
+I have to get back to my work, please free to explore the ship. #line:Thomas_06
 <<set $ThomasFinished = true>>
 ===
 
@@ -59,7 +58,6 @@ Do you want to guess which currency we have with us? #line:Robert_03
 
 -> French and Portuguese currency  #line:09748a8
     <<jump RightAnswer>>
-
 -> British and Spanish currency #line:078021c 
     <<jump WrongAnswer>>
 
@@ -78,7 +76,6 @@ tags:
 Do you want to try again? Guess the currency we have. #line:Robert_06 
 -> French and Portuguese currency  #line:0994a3e //correct option
     <<jump RightAnswer>>
-    
 -> British and Spanish currency #line:0f2428d 
     <<jump WrongAnswer>>
 ===
@@ -97,7 +94,6 @@ Do you know, in this age, kings encourage merchants to attack trade vessels like
 Why do you think they would do that? #line:0724530 
 -> To create jobs for naval architects. #line:0a39720 
     <<jump SoldierWrong>>
-
 -> To capture ship, crew and cargo. #line:0d5bef2 
     <<jump SoldierCorrect>>
 ===
