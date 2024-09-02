@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class IntroTriggers : MonoBehaviour
 {
@@ -37,7 +38,13 @@ public class IntroTriggers : MonoBehaviour
             // Play the audio for this trigger zone
             IntroAudioThisObj.Play();
 
-            StartCoroutine(DisableTriggerAfterAudio());  // Start coroutine to disable IsTrigger after audio finishes
+            //only disable the collider if the scene is not the museum scene
+            if(SceneManager.GetActiveScene().name != "5 Museum Scene")
+            {
+                // Disable the collider after the audio finishes playing
+                StartCoroutine(DisableTriggerAfterAudio());
+            }
+            
         }
     }
     private IEnumerator DisableTriggerAfterAudio()
