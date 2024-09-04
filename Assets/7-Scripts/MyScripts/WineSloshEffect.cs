@@ -10,42 +10,55 @@ public class WineSloshEffect : MonoBehaviour
     
     public int sloshSpeed = 60; //the speed at which the liquid will slosh
     public int rotateSpeed = 15; //the speed at which the liquid will rotate
-    
-    private int difference = 25; //will be used to clamp the rotation of the liquid layer
 
-    // Start is called before the first frame update
+    private float difference = 0.01f; //will be used to clamp the rotation of the liquid layer
+
+    private Quaternion initialRotation; // Store the initial rotation of the parent
+
     void Start()
     {
-        
+        // Ensure the initial rotation is set to identity
+        initialRotation = Quaternion.identity;
+        LiquidLayerParent.transform.localRotation = initialRotation;
     }
-
-    // Update is called once per frame
     void Update()
     {
-        //motion of the liquid layer
+        // Slosh the liquid based on mug movement
         Slosh();
 
-        //rotation of the liquid layer, will slowly rotate the liquid layer
-        LiquidLayerMainMesh.gameObject.transform.Rotate(Vector3.up * Time.deltaTime * rotateSpeed, Space.Self);
+        // Rotate the liquid layer mesh slowly for visual effect
+        LiquidLayerMainMesh.transform.Rotate(Vector3.forward * Time.deltaTime * rotateSpeed, Space.Self);
 
     }
 
     private void Slosh()
     {
-    
         //inverse local rotation of the wine glass
         Quaternion inverseRotation = Quaternion.Inverse(transform.localRotation);
 
-        //rotate to:
-        Vector3 finalRotation = Quaternion.RotateTowards(LiquidLayerParent.transform.localRotation, inverseRotation, sloshSpeed * Time.deltaTime).eulerAngles;
-        //geting the euler angles of the final rotation
+        // Rotate towards inverse of the wine mug's rotation
+        Quaternion targetRotation = Quaternion.RotateTowards(LiquidLayerParent.transform.localRotation, inverseRotation, sloshSpeed * Time.deltaTime);
+        
+        // Convert target rotation to Euler angles
+        Vector3 finalRotation = targetRotation.eulerAngles;
 
-        //clamp the rotation of the liquid layer, so the internal mesh isnt flying around
-        finalRotation.x = ClampRotationValue(finalRotation.x, difference);
-        finalRotation.y = ClampRotationValue(finalRotation.y, difference);
-
-        //set the rotation of the liquid layer to the final rotation
+        // Check if the mug is stationary (within a small threshold)
+        if (transform.localEulerAngles != Vector3.zero)
+        {
+            // Clamp the rotation of the liquid layer so the internal mesh isn't flying around
+            finalRotation.x = ClampRotationValue(finalRotation.x, difference);
+            finalRotation.y = ClampRotationValue(finalRotation.y, difference);
+            finalRotation.z = ClampRotationValue(finalRotation.z, difference);
+        }
+        else
+        {
+            // Smoothly reset rotation to zero when stationary
+            finalRotation = Vector3.Lerp(LiquidLayerParent.transform.localEulerAngles, Vector3.zero, Time.deltaTime * sloshSpeed);
+        }
+        
+        // Apply the clamped rotation to the liquid layer parent
         LiquidLayerParent.transform.localEulerAngles = finalRotation;
+
     }
 
     private float ClampRotationValue(float value, float difference)
@@ -58,12 +71,10 @@ public class WineSloshEffect : MonoBehaviour
         if (value > 180)
         {
             returnValue = Mathf.Clamp(value, 360 - difference, 360);
-            //if the value is greater than 180, we will clamp it between 360-difference (360-25 = 335) and 360
         }
         else
         {
             returnValue = Mathf.Clamp(value, 0, difference);
-            //if the value is less than 180, we will clamp it between 0 and difference (25)
         }
 
         return returnValue;

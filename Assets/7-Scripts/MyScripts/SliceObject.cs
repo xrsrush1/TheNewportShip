@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using EzySlice;
 using static UnityEngine.UI.Image;
-using UnityEditor.Rendering;
+//using UnityEditor.Rendering;
 
 public class SliceObject : MonoBehaviour
 {
