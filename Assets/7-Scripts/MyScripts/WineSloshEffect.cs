@@ -11,7 +11,7 @@ public class WineSloshEffect : MonoBehaviour
     public int sloshSpeed = 60; //the speed at which the liquid will slosh
     public int rotateSpeed = 15; //the speed at which the liquid will rotate
 
-    private float difference = 0.01f; //will be used to clamp the rotation of the liquid layer
+    public float difference = 0.01f; //will be used to clamp the rotation of the liquid layer
 
     private Quaternion initialRotation; // Store the initial rotation of the parent
 
