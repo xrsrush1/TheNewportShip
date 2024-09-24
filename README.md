@@ -51,6 +51,8 @@ Here are some screenshots from the VR app and 2D video:
 
 ![image](https://github.com/user-attachments/assets/2b42ec7a-8ea7-4b25-bee9-0a3c7b6e93c4)
 
+![image](https://github.com/user-attachments/assets/17e79477-2131-4757-9606-533ab6776c19)
+
 
 ## **Technologies Used**
 - **Unity 3D**: Development platform for the VR app.
