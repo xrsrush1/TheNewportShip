@@ -44,6 +44,12 @@ To get started with this project on your local machine, follow these steps:
 ## **Screenshots**
 Here are some screenshots from the VR app and 2D video:
 
+- **VR App**:
+
+  
+- **2D Animation**:
+![image](https://github.com/user-attachments/assets/2b42ec7a-8ea7-4b25-bee9-0a3c7b6e93c4)
+
 
 ## **Technologies Used**
 - **Unity 3D**: Development platform for the VR app.
