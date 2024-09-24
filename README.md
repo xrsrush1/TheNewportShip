@@ -12,7 +12,6 @@ This project explores the use of Virtual Reality (VR) and 2D Animation as tools 
 - [Usage](#usage)
 - [Screenshots](#screenshots)
 - [Technologies Used](#technologies-used)
-- [License](#license)
 - [Acknowledgments](#acknowledgments)
 
 ## **Installation**
@@ -58,9 +57,6 @@ Here are some screenshots from the VR app and 2D video:
 - **Blender**: Used for 3D modelling and animating assets.
 - **Canva**: Design tool for creating UI elements.
 - **Meta Quest 3**: VR headset for testing and user interaction.
-
-## **License**
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
 
 ## **Acknowledgments**
 Special thanks to my supervisors, Prof. Sebastian Vowles, Prof. Ted Thomas, and Miss Xiaojun Yin, for their invaluable guidance throughout the project. I also extend my gratitude to Dr. Toby Jones and the volunteers at the Newport Ship Centre, as well as Dr. Pat Tanner and Martin Moss of DextraVisual for their contributions. This project wouldn't have been possible without their support.
