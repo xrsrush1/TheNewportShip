@@ -48,6 +48,8 @@ Here are some screenshots from the VR app and 2D video:
 
   
 - **2D Animation**:
+![image](https://github.com/user-attachments/assets/767f4c50-925f-472b-8cda-cf205af9f2ba)
+
 ![image](https://github.com/user-attachments/assets/2b42ec7a-8ea7-4b25-bee9-0a3c7b6e93c4)
 
 
